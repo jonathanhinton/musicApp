@@ -33,6 +33,11 @@ $(document).ready(function(){
     };
   }
 
+//THESE SONGS INITIALIZE ON LOAD
+  $.ajax({
+    url:"javaScripts/songs.json"
+  }).done(addSongs);
+
 //ADD MORE SONGS ON CLICK
   $("#get-more-music").click(function() {
     $.ajax({
@@ -40,10 +45,6 @@ $(document).ready(function(){
     }).done(addSongs);
   });
 
-//THESE SONGS INITIALIZE ON LOAD
-  $.ajax({
-    url:"javaScripts/songs.json"
-  }).done(addSongs);
 
 
 

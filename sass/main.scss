@@ -1,0 +1,22 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #ffdead;
+
+body {
+  font: 100%, $font-stack;
+  color: $primary-color;
+
+  section {
+    background-color: lightblue;
+  }
+}
+
+@mixin border-radius($radius){
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+section {
+  @include border-radius(10px);
+}

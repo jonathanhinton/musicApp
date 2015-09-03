@@ -9,7 +9,7 @@ requirejs.config({
   }
 });
 
-require(["jquery", "main"], function($, main) {
+require(["jquery", "main", ], function($, main) {
 
 });
 
