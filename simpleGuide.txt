@@ -1,0 +1,7 @@
+Simple guide:
+
+1. mkdir
+2. mkdir for javascripts and css
+3. touch index
+4. copy resources into main folder i.e. bower.json package.json and Gruntfile.js
+5. "npm install"
