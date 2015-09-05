@@ -1,3 +1,17 @@
+/*body {
+  font: 100%, Helvetica, sans-serif;
+  color: #ffdead; }
+  body section {
+    background-color: lightblue; }
+
+section {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px; }
+*/
+/*# sourceMappingURL=main.css.map */
+
 
 * {
   font-family: "Poiret One";
@@ -33,7 +47,7 @@
   flex-grow: 1;
   background: lavender;
   margin-top: 78px;
-  padding: 15px 0 0 0;
+  padding: 5px 0;
 }
 
 .right__sidebar {
