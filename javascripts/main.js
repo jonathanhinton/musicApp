@@ -1,7 +1,12 @@
 define(["jquery", "populate", "getMore", "DOMaccess"], function($, populate, getMore, DOMaccess) {
-  function logit(monkey) {
-    console.log(monkey);
-  }
+
+//TEST FUNCTION
+  // function logit(monkey) {
+  //   console.log(monkey);
+  // }
+  // populate.getSongs(logit);
+
+  // getMore.getMore(logit);
 
   function addSongs(songList) {
     var songListItems = $();
@@ -13,49 +18,49 @@ define(["jquery", "populate", "getMore", "DOMaccess"], function($, populate, get
 
             "<div class='songSection'><h2 class='song'>" + currentSong.title + "</h2><p class='artist'>Performed by " + currentSong.artist + "</p>" + "<p class='album'>On the album " + currentSong.album + "</p>" + "<button class='destroy'>Delete this Song</button></div>"
       );
+//     // Populate Artist dropdown list with artist info
+      artistDropDown = artistDropDown.add(
+        "<option>" + currentSong.artist + "</option>"
+        );
+//     // Populate Album dropdown list with album info
+      albumDropDown = albumDropDown.add(
+        "<option>" + currentSong.album + "</option>"
+        );
 
     // Add to the DOM
     DOMaccess.songList.append(songListItems);
+    DOMaccess.artistDrop.append(artistDropDown);
+    DOMaccess.albumDrop.append(albumDropDown);
     }
   }
-
-$("#theClicker").click(function() {
-  DOMaccess.addMusic();
-});
-
-  populate.getSongs(logit);
-
-  getMore.getMore(logit);
-
+//POPULATE DOM
   populate.getSongs(addSongs);
 
+//ADD MUSIC WITH BUTTON
   DOMaccess.moreMusic.on("click", function(){
     getMore.getMore(addSongs);
   });
-  $(document).on("click", ".destroy", function() {
-      console.log("clicked");
-      $(this).parent().hide('fast', function () {
-        $(this).remove();
-      });
-  });
+
+
+
+//REMOVE MUSIC WITH BUTTON
+  DOMaccess.destroy();
+  // $(document).on("click", ".destroy", function() {
+  //     // console.log("clicked");
+  //     $(this).parent().hide('fast', function () {
+  //       $(this).remove();
+  //     });
+  // });
 
 });
 // $(document).ready(function(){
 
 //ADD SONGS TO DOM
 
-//     // Populate Artist dropdown list with artist info
-//       artistDropDown = artistDropDown.add(
-//         "<option>" + currentSong.artist + "</option>"
-//         );
 
 //     // Add to the DOM
 //     $("#artistDrop").append(artistDropDown);
 
-//     // Populate Album dropdown list with album info
-//       albumDropDown = albumDropDown.add(
-//         "<option>" + currentSong.album + "</option>"
-//         );
 
 //     // Add to the DOM
 //     $("#albumDrop").append(albumDropDown);

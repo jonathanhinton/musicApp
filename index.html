@@ -2,23 +2,24 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles/main.css">
   <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="styles/main.css">
   <meta charset="UTF-8">
   <title>Music App</title>
 </head>
 <body class="flex-container">
   <header class="flex-item main__header">
-    <nav role='navigation'>
-      <ul>
-        <li><a href="#">View Music</a> | </li>
-        <li id="#get-more-music"><a href="#">Add Music</a> | </li>
-        <li><a href="#">Profile</a></li>
+    <nav class="navbar navbar-default navbar-fixed-top" role='navigation' >
+      <ul class="nav nav-pills">
+        <li role="presentation"><a href="#">View Music</a></li>
+        <li role="presentation"><a href="#">Add Music</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
       </ul>
     </nav>
   </header>
-    <button id="theClicker">The CLIIIIIIIICKER</button>
-    <div class="flex-item left__sidebar">
+  <div class="row">
+
+    <div class="flex-item left__sidebar col-md-4">
 
       <div class="slider">
         <label for="songLength">Song Length</label>
@@ -58,9 +59,11 @@
 
     </div>
 
-    <div class="flex-item right__sidebar" id="songList">
+    <div class="flex-item right__sidebar col-md-8" id="songList">
       <button id="get-more-music">Get More Music</button>
     </div>
+  </div>
+
   <footer class="flex-item main__footer">Created by Jonathan Hinton <datetime>2015</datetime></footer>
 
   <script data-main="javascripts/entry" src="bower_components/requirejs/require.js"></script>

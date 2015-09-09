@@ -1,8 +1,8 @@
-$font-stack: Helvetica, sans-serif;
-$primary-color: #ffdead;
+$font-stack: "Poiret One", sans-serif;
+$primary-color: black;
 
 body {
-  font: 100%, $font-stack;
+  font-family: $font-stack;
   color: $primary-color;
 
   section {

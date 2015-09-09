@@ -1,21 +1,18 @@
-define(["jquery", "getMore"], function($, getMore) {
+define(["jquery", "getMore", "populate"], function($, getMore, populate) {
   return {
-    addMusic : function(){
-      console.log("you have clicked");
-    },
     songList : $("#songList"),
-    moreMusic : $("#get-more-music")
+    moreMusic : $("#get-more-music"),
+    artistDrop : $("#artistDrop"),
+    albumDrop : $("#albumDrop"),
+    destroy : function() {
+                $(document).on("click", ".destroy", function() {
+                // console.log("clicked");
+                $(this).parent().hide('fast', function () {
+                  $(this).remove();
+                  });
+                });
+              }
   };
-//   var DomAccess {
-//     songTitle : $(".song"),
-//     artistName : $(".artist"),
-//     albumName : $(".album")
-//   };
-//   return {
-//     populateDom : function() {
-
-//     }
-//   }
 });
 
 //this module will be used to access the DOM by getting elements and
