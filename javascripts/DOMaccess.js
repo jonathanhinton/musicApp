@@ -1,4 +1,4 @@
-define(["jquery", "getMore", "populate"], function($, getMore, populate) {
+define(["jquery"], function($) {
   return {
     songList : $("#songList"),
     moreMusic : $("#get-more-music"),
