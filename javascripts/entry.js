@@ -5,7 +5,7 @@ requirejs.config({
     "bootstrap": "../bower_components/bootstrap/dist/js/bootstrap.min",
   },
   shim: {
-    "bootstrap": ["jquery"]
+    "bootstrap": {"deps" : ["jquery"]}
   }
 });
 

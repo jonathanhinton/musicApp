@@ -4,8 +4,8 @@ define(["jquery"], function($) {
     getSongs: function(callback){
           $.ajax({
           url:"javascripts/songs.json"
-          }).done(function(songList){
-            callback(songList);
+          }).done(function(thing){
+            callback(thing.songs);
            });
       }
     };

@@ -1,4 +1,4 @@
-define(["jquery", "populate", "getMore", "DOMaccess"], function($, populate, getMore, DOMaccess) {
+define(["jquery", "populate", "getMore", "DOMaccess", "bootstrap"], function($, populate, getMore, DOMaccess) {
 
 //TEST FUNCTION
   // function logit(monkey) {
@@ -8,12 +8,12 @@ define(["jquery", "populate", "getMore", "DOMaccess"], function($, populate, get
 
   // getMore.getMore(logit);
 
-  function addSongs(songList) {
+  function addSongs(thing) {
     var songListItems = $();
     var artistDropDown = $();
     var albumDropDown = $();
-    for (var i = 0; i < songList.songs.length; i++) {
-      var currentSong = songList.songs[i];
+    for (var i = 0; i < thing.length; i++) {
+      var currentSong = thing[i];
           songListItems = songListItems.add(
 
             "<div class='songSection'><h2 class='song'>" + currentSong.title + "</h2><p class='artist'>Performed by " + currentSong.artist + "</p>" + "<p class='album'>On the album " + currentSong.album + "</p>" + "<button class='destroy'>Delete this Song</button></div>"
@@ -37,7 +37,7 @@ define(["jquery", "populate", "getMore", "DOMaccess"], function($, populate, get
   populate.getSongs(addSongs);
 
 //ADD MUSIC WITH BUTTON
-  DOMaccess.moreMusic.on("click", function(){
+  DOMaccess.moreMusic.one("click", function(){
     getMore.getMore(addSongs);
   });
 
