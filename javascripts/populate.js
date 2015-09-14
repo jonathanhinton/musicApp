@@ -3,9 +3,10 @@ define(["jquery"], function($) {
   return {
     getSongs: function(callback){
           $.ajax({
-          url:"javascripts/songs.json"
-          }).done(function(thing){
-            callback(thing.songs);
+          url:"https://boiling-heat-777.firebaseio.com/songs.json"
+          }).done(function(firebaseData){
+            console.log("firebase data : ", firebaseData);
+            callback(firebaseData);
            });
       }
     };

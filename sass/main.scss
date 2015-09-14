@@ -1,13 +1,17 @@
+
 $font-stack: "Poiret One", sans-serif;
 $primary-color: black;
 
 body {
+/**
+  background-image: url("../img/background.jpg");
+**/
   font-family: $font-stack;
   color: $primary-color;
-
-  section {
-    background-color: lightblue;
   }
+.btn-group {
+  margin: 15px;
+  padding: 15px;
 }
 
 @mixin border-radius($radius){
@@ -20,3 +24,36 @@ body {
 section {
   @include border-radius(10px);
 }
+
+.interaction {
+  background-color: lightblue;
+  height: 100%;
+}
+
+.main__footer {
+  background-color: lightgray;
+  padding: 5px;
+  font-size: 1em;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.destroy {
+  display: inline;
+  width: 50px;
+  height: 50px;
+}
+
+.filter {
+  margin: auto;
+}
+
+.loadMore {
+  margin: 10px;
+}
+
+
+
+
+
+

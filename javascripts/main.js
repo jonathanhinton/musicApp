@@ -1,44 +1,46 @@
-define(["jquery", "populate", "getMore", "DOMaccess", "bootstrap"], function($, populate, getMore, DOMaccess) {
+define(["jquery", "hbs", "bootstrap", "populate", "getMore", "DOMaccess"], function($, handlebars, bootstrap, populate, getMore, DOMaccess) {
 
-//TEST FUNCTION
-  // function logit(monkey) {
-  //   console.log(monkey);
-  // }
-  // populate.getSongs(logit);
 
-  // getMore.getMore(logit);
+//   function addSongs(data) {
+//     var songListItems = $();
+//     var artistDropDown = $();
+//     var albumDropDown = $();
+//     for (var i = 0; i < data.length; i++) {
+//       var currentSong = data[i];
+//           songListItems = songListItems.add(
 
-  function addSongs(thing) {
-    var songListItems = $();
-    var artistDropDown = $();
-    var albumDropDown = $();
-    for (var i = 0; i < thing.length; i++) {
-      var currentSong = thing[i];
-          songListItems = songListItems.add(
+//             "<div class='songSection'><h2 class='song'>" + currentSong.name + "</h2><p class='artist'>Performed by " + currentSong.artist + "</p>" + "<p class='album'>On the album " + currentSong.album + "</p>" + "<button class='destroy'><span class='glyphicon glyphicon-remove-circle'></span>DELETE!!!</button></div>"
+//       );
+// //     // Populate Artist dropdown list with artist info
+//       artistDropDown = artistDropDown.add(
+//         "<option>" + currentSong.artist + "</option>"
+//         );
+// //     // Populate Album dropdown list with album info
+//       albumDropDown = albumDropDown.add(
+//         "<option>" + currentSong.album + "</option>"
+//         );
 
-            "<div class='songSection'><h2 class='song'>" + currentSong.title + "</h2><p class='artist'>Performed by " + currentSong.artist + "</p>" + "<p class='album'>On the album " + currentSong.album + "</p>" + "<button class='destroy'>Delete this Song</button></div>"
-      );
-//     // Populate Artist dropdown list with artist info
-      artistDropDown = artistDropDown.add(
-        "<option>" + currentSong.artist + "</option>"
-        );
-//     // Populate Album dropdown list with album info
-      albumDropDown = albumDropDown.add(
-        "<option>" + currentSong.album + "</option>"
-        );
-
-    // Add to the DOM
-    DOMaccess.songList.append(songListItems);
-    DOMaccess.artistDrop.append(artistDropDown);
-    DOMaccess.albumDrop.append(albumDropDown);
-    }
-  }
+//     // Add to the DOM
+//     DOMaccess.songList.append(songListItems);
+//     DOMaccess.artistDrop.append(artistDropDown);
+//     DOMaccess.albumDrop.append(albumDropDown);
+//     }
+//   }
 //POPULATE DOM
-  populate.getSongs(addSongs);
+  populate.getSongs(function(songs) {
+      require(['hbs!../templates/songs'], function(songTemplate) {
+        $("#songList").html(songTemplate(songs));
+      });
+  });
+
 
 //ADD MUSIC WITH BUTTON
-  DOMaccess.moreMusic.one("click", function(){
-    getMore.getMore(addSongs);
+  $(document).one("click", "#loadMore", function(){
+    getMore.getMore(function(songs) {
+      require(['hbs!../templates/songs'], function(songTemplate) {
+        $("#songList").append(songTemplate(songs));
+      });
+    });
   });
 
 
@@ -92,4 +94,4 @@ define(["jquery", "populate", "getMore", "DOMaccess", "bootstrap"], function($, 
 //   });
 // });
 
-// LESSONS LEARNED: line 4 declares the function addSongs to populate the DOM with the key/values in the JSON file.  line 5 declares the variable which is an empty jquery string which will build up in the for loop on lines 6 through 11.  line 7 declares a variable currentSong which is each iteration of the JSON object songs.  The variable songListItems is updated in line 8 - 10.  it takes the empty jquery string and adds 1)  new div's each with their own specific class so that the objects within them can be deleted all at once...I wonder if the class name is even necessary since I are targeting each item for deletion by parent object...just deleted the class and it worked just fine.  I am going to leave it in for now because it was so much work...and I might want to use it later.  so...coming down to line 26 the problem I encountered was that the button is being created dynamically and on page load does not exist.  It is all located within the Div with the #songList so I needed to target the div that everything was being created to, and then add a dynamic event listener using .on() the event is "click" the only class that matters was the one we created on the button.  Because the remove is targeting the parent element and not a specific class the class name doesn't NOTE: CHANGED CODE SO LINE NUMBERS MIGHT HAVE CHANGED.
+// LESSONS LEARNED: line 4 declares the function addSongs to populate the DOM with the key/values in the JSON file.  line 5 declares the variable which is an empty jquery string which will build up in the for loop on lines 6 through 11.  line 7 declares a variable currentSong which is each iteration of the JSON object songs.  The variable songListItems is updated in line 8 - 10.  it takes the empty jquery string and adds 1)  new div's each with their own specific class so that the objects within them can be deleted all at once...I wonder if the class name is even necessary since I are targeting each item for deletion by parent object...just deleted the class and it worked just fine.  I am going to leave it in for now because it was so much work...and I might want to use it later.  so...coming down to line 26 the problem I encountered was that the button is being created dynamically and on page load does not exist.  It is all located within the Div with the #songList so I needed to target the div that everydata was being created to, and then add a dynamic event listener using .on() the event is "click" the only class that matters was the one we created on the button.  Because the remove is targeting the parent element and not a specific class the class name doesn't NOTE: CHANGED CODE SO LINE NUMBERS MIGHT HAVE CHANGED.

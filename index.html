@@ -1,72 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="styles/main.css">
   <meta charset="UTF-8">
-  <title>Music App</title>
+  <title>listenUP</title>
 </head>
 <body class="flex-container">
-  <header class="flex-item main__header">
-    <nav class="navbar navbar-default" role='navigation' >
-      <ul class="nav nav-pills">
-        <li role="presentation"><a href="#">View Music</a></li>
-        <li role="presentation"><a href="#">Add Music</a></li>
-        <li role="presentation"><a href="#">Profile</a></li>
-      </ul>
-    </nav>
-  </header>
-  <div class="row">
+  <div class="container">
 
-    <div class="flex-item left__sidebar col-md-4">
+    <div class="row">
+      <header class="main__header">
+        <nav class="navbar navbar-default" role='navigation' >
+          <ul class="nav nav-pills">
+            <li role="presentation"><a href="#">View Music</a></li>
+            <li role="presentation"><a href="song-form.html">Add Music</a></li>
+            <li role="presentation"><a href="#">Profile</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+    <div class="row">
+      <div class="col-md-1 leftBar"></div>
+        <div class="col-md-3 interaction">
 
-      <div class="slider">
-        <label for="songLength">Song Length</label>
-        <input type="range" name="songLength" />
+          <div class="slider">
+            <label for="songLength">Song Length</label>
+            <input type="range" name="songLength" />
+          </div>
+          <div class="artistSelect">
+            <label for="Artist">Artist</label>
+            <br />
+            <select name="artistDrop" id="artistDrop">
+            </select>
+          </div>
+
+          <div class="albumSelect">
+            <label for="Album">Album</label>
+            <br />
+            <select name="albumDrop" id="albumDrop">
+            </select>
+          </div>
+
+
+          <div class="genre">
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary">Rock</button>
+              <button type="button" class="btn btn-primary">Pop</button>
+              <button type="button" class="btn btn-primary">Blues</button>
+            </div> <br>
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary">Indie</button>
+              <button type="button" class="btn btn-primary">Jazz</button>
+              <button type="button" class="btn btn-primary">Folk</button>
+            </div>
+
+    <!--
+            <ul class="leftBox">
+              <li><input type="checkbox" name="checkbox" id="checkbox" />Rock</li>
+              <li><input type="checkbox" name="checkbox" id="checkbox" />Pop</li>
+              <li><input type="checkbox" name="checkbox" id="checkbox" />Blues</li>
+            </ul>
+            <ul class="rightBox">
+              <li><input type="checkbox" name="checkbox" id="checkbox" />Indie</li>
+              <li><input type="checkbox" name="checkbox" id="checkbox" />Jazz</li>
+              <li><input type="checkbox" name="checkbox" id="checkbox" />Hip-hop</li>
+            </ul>
+             -->
+          </div>
+
+          <div class="filter">
+            <input type="submit" value="filter" />
+          </div>
+
+        </div>
+
+        <div class="col-md-7">
+        <div  id="songList"></div>
+    <!--
+          <button id="get-more-music"><span class="glyphicon glyphicon-plus"></span><span </div>class="glyphicon glyphicon-music"></span></button>
+     -->
+          <button id="loadMore" class="separation--top">MO' MUSIC</button>
+        </div>
       </div>
-      <div class="artistSelect">
-        <label for="Artist">Artist</label>
-        <br />
-        <select name="artistDrop" id="artistDrop">
-        </select>
-      </div>
 
-      <div class="albumSelect">
-        <label for="Album">Album</label>
-        <br />
-        <select name="albumDrop" id="albumDrop">
-        </select>
-      </div>
-
-
-      <div class="genre">
-        <ul class="leftBox">
-          <li><input type="checkbox" name="checkbox" id="checkbox" />Rock</li>
-          <li><input type="checkbox" name="checkbox" id="checkbox" />Pop</li>
-          <li><input type="checkbox" name="checkbox" id="checkbox" />Blues</li>
-        </ul>
-        <ul class="rightBox">
-          <li><input type="checkbox" name="checkbox" id="checkbox" />Indie</li>
-          <li><input type="checkbox" name="checkbox" id="checkbox" />Jazz</li>
-          <li><input type="checkbox" name="checkbox" id="checkbox" />Hip-hop</li>
-        </ul>
-      </div>
-
-      <div class="filter">
-        <input type="submit" value="filter" />
-      </div>
-
+      <div class="col-md-1 rightBar"></div>
+    <div class="row">
+      <footer class="flex-item main__footer">Created by Jonathan Hinton <datetime>2015</datetime></footer>
     </div>
 
-    <div class="flex-item right__sidebar col-md-8" id="songList">
-      <button id="get-more-music">Get More Music</button>
-    </div>
-  </div>
 
-  <footer class="flex-item main__footer">Created by Jonathan Hinton <datetime>2015</datetime></footer>
-
-  <script data-main="javascripts/entry" src="bower_components/requirejs/require.js"></script>
+  <script data-main="javascripts/entry" src="lib/bower_components/requirejs/require.js"></script>
 
 </body>
 </html>

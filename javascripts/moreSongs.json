@@ -1,22 +1,25 @@
 {
   "songs": [
     {
-      "title": "Crags and Clay",
+      "name": "Crags and Clay",
       "artist": "Gungor",
       "album": "Ghosts upon the Earth",
-      "genre": "Indie"
+      "genre": "Indie",
+      "year": 2008
     },
     {
-      "title": "Barton's Hollow",
+      "name": "Barton's Hollow",
       "artist": "The Civil Wars",
       "album": "Barton's Hollow",
-      "genre": "Folk"
+      "genre": "Folk",
+      "year": 2008
     },
     {
-      "title": "The Poison",
+      "name": "The Poison",
       "artist": "Pedro the Lion",
       "album": "Achilles Heel",
-      "genre": "Indie"
+      "genre": "Indie",
+      "year": 2008
     }
   ]
 }

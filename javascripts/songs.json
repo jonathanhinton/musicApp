@@ -1,46 +1,74 @@
 {
   "songs": [
     {
-      "title": "The Walk",
-      "artist": "Mayer Hawthorne",
-      "album": "How do You Do",
-      "genre": "Blues"
+      "name": "Oh Yeah",
+      "artist": "Yello",
+      "album": "Stella",
+      "genre": "Humor",
+      "year": 1985
     },
     {
-      "title": "You Should've Come Over",
+      "name": "You Should've Come Over",
       "artist": "Jeff Buckley",
       "album": "Grace",
-      "genre": "Pop"
+      "genre": "Pop",
+      "year": 2008
     },
     {
-      "title": "It's the End of The World as We Know It",
+      "name": "It's the End of The World as We Know It",
       "artist": "R.E.M.",
       "album": "Document",
-      "genre": "Rock"
+      "genre": "Rock",
+      "year": 2008
     },
     {
-      "title": "A Long December",
+      "name": "A Long December",
       "artist": "Counting Crows",
       "album": "Recovering the Satellites",
-      "genre": "Pop"
+      "genre": "Pop",
+      "year": 2008
     },
     {
-      "title": "Letting the Cables Sleep",
+      "name": "Letting the Cables Sleep",
       "artist": "Bush",
       "album": "Science of Things",
-      "genre": "Rock"
+      "genre": "Rock",
+      "year": 2008
     },
     {
-      "title": "The Big Sleep",
+      "name": "The Big Sleep",
       "artist": "Murder By Death",
       "album": "In Bocca al Luppo",
-      "genre": "Indie"
+      "genre": "Indie",
+      "year": 2008
     },
     {
-      "title": "Vanderlyle Crybaby Geeks",
+      "name": "Vanderlyle Crybaby Geeks",
       "artist": "The National",
       "album": "High Violet",
-      "genre": "Indie"
+      "genre": "Indie",
+      "year": 2008
+    },
+    {
+      "name": "Crags and Clay",
+      "artist": "Gungor",
+      "album": "Ghosts upon the Earth",
+      "genre": "Indie",
+      "year": 2008
+    },
+    {
+      "name": "Barton's Hollow",
+      "artist": "The Civil Wars",
+      "album": "Barton's Hollow",
+      "genre": "Folk",
+      "year": 2008
+    },
+    {
+      "name": "The Poison",
+      "artist": "Pedro the Lion",
+      "album": "Achilles Heel",
+      "genre": "Indie",
+      "year": 2008
     }
   ]
 }
