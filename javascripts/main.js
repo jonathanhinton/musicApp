@@ -1,4 +1,83 @@
-define(["jquery", "hbs", "bootstrap", "populate", "getMore", "DOMaccess"], function($, handlebars, bootstrap, populate, getMore, DOMaccess) {
+define(["jquery", "hbs", "lodash", "firebase", "bootstrap", "material", "getMore", "DOMaccess", "populateForm", "getUnique", "songTemplates"], function($, handlebars, _, firebase, bootstrap, material, getMore, DOMaccess, form, unique, templates) {
+
+
+
+$.material.init();
+var myFirebaseRef = new Firebase("https://listenup.firebaseio.com/");
+
+var allSongsArray = [];
+var allSongsObject = {};
+var originalSongsArray = [];
+
+
+myFirebaseRef.child("songs").on("value", function(snapshot) {
+  //this firebase reference holds all the information that was in my ajax call
+  var songs = snapshot.val();
+  console.log("songs", songs);
+
+  allSongsArray = [];
+
+  for (var key in songs){
+    allSongsArray[allSongsArray.length] = songs[key];
+  }
+
+allSongsObject = {songs : allSongsArray};
+
+originalSongsArray = allSongsArray.slice();
+
+$("#songList").html(templates.songs(allSongsObject));
+
+var uniqueArtist = unique(allSongsArray).uniqueArtists;
+console.log("unique artists", uniqueArtist);
+
+$("#artistDrop").html(templates.artists({artists: uniqueArtist}));
+
+var uniqueAlbum = unique(allSongsArray).uniqueAlbums;
+console.log("unique albums", uniqueAlbum);
+
+$("#albumDrop").html(templates.albums({albums: uniqueAlbum}));
+
+
+});
+
+
+
+$(".btn-primary").click(function(){
+  $(this).toggleClass("btn-danger");
+});
+
+// loadsongs();
+//POPULATE DOM
+
+  // populate.getSongs(function(songs) {
+  //     require(['hbs!../templates/songs'], function(songTemplate) {
+  //       $("#songList").html(songTemplate(songs));
+  //     });
+  // });
+
+  // populate.getSongs(function(songs) {
+  //     require(['hbs!../templates/album'], function(songTemplate) {
+  //       $("#albumDrop").html(songTemplate(songs));
+  //     });
+  // });
+
+  // populate.getSongs(function(songs) {
+  //     require(['hbs!../templates/artist'], function(songTemplate) {
+  //       $("#artistDrop").html(songTemplate(songs));
+  //     });
+  // });
+
+//REMOVE MUSIC WITH BUTTON
+  DOMaccess.destroy();
+
+
+});
+
+
+
+
+
+
 
 
 //   function addSongs(data) {
@@ -26,27 +105,18 @@ define(["jquery", "hbs", "bootstrap", "populate", "getMore", "DOMaccess"], funct
 //     DOMaccess.albumDrop.append(albumDropDown);
 //     }
 //   }
-//POPULATE DOM
-  populate.getSongs(function(songs) {
-      require(['hbs!../templates/songs'], function(songTemplate) {
-        $("#songList").html(songTemplate(songs));
-      });
-  });
-
 
 //ADD MUSIC WITH BUTTON
-  $(document).one("click", "#loadMore", function(){
-    getMore.getMore(function(songs) {
-      require(['hbs!../templates/songs'], function(songTemplate) {
-        $("#songList").append(songTemplate(songs));
-      });
-    });
-  });
+  // $(document).one("click", "#loadMore", function(){
+  //   getMore.getMore(function(songs) {
+  //     require(['hbs!../templates/songs'], function(songTemplate) {
+  //       $("#songList").append(songTemplate(songs));
+  //     });
+  //   });
+  // });
 
 
 
-//REMOVE MUSIC WITH BUTTON
-  DOMaccess.destroy();
   // $(document).on("click", ".destroy", function() {
   //     // console.log("clicked");
   //     $(this).parent().hide('fast', function () {
@@ -54,7 +124,6 @@ define(["jquery", "hbs", "bootstrap", "populate", "getMore", "DOMaccess"], funct
   //     });
   // });
 
-});
 // $(document).ready(function(){
 
 //ADD SONGS TO DOM

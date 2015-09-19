@@ -15,10 +15,6 @@ section {
   -ms-border-radius: 10px;
   border-radius: 10px; }
 
-.interaction {
-  background-color: lightblue;
-  height: 100%; }
-
 .main__footer {
   background-color: lightgray;
   padding: 5px;
@@ -26,15 +22,43 @@ section {
   margin: 5px 0;
   text-align: center; }
 
-.destroy {
-  display: inline;
-  width: 50px;
-  height: 50px; }
-
 .filter {
   margin: auto; }
 
 .loadMore {
   margin: 10px; }
+
+#toggle-button h2 {
+  font-size: 18.7199993133545px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-top: 50px; }
+
+#toggle-button .togglebutton label {
+  margin: 20px 10px;
+  width: 200px; }
+
+#toggle-button .togglebutton .toggle {
+  float: right; }
+
+#slider .sample1, #slider .sample2 {
+  padding: 20px 0;
+  background-color: #f0f0f0;
+  margin-bottom: 20px; }
+
+#slider .sample2 {
+  height: 150px; }
+
+#slider .sample2 .slider {
+  margin: 0 40px; }
+
+#slider h2 {
+  padding: 14px;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400; }
+
+#slider .slider {
+  margin: 15px; }
 
 /*# sourceMappingURL=main.css.map */

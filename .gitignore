@@ -1,5 +1,6 @@
 img
 node_modules
 bower_components
+noUiSlider.8.0.2
 .sass-cache
 .DS_Store

@@ -1,9 +1,8 @@
 {{#each songs}}
   <div class="songInfo">
-    <h2>{{ name }}</h2>
-    <h4>{{ artist }}</h4>
-    <h4>{{ album }}</h4>
-    <h6>{{ year }}</h6>
-    <button class="destroy"><span class="glyphicon glyphicon-remove"></span></button>
+    <h2>{{ name }} ({{ year }})</h2>
+    <h4> Performed by {{ artist }}</h4>
+    <h4> On the album {{ album }}</h4>
+    <button class="destroy btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Remove</button>
   </div>
 {{/each}}

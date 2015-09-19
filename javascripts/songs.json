@@ -69,6 +69,20 @@
       "album": "Achilles Heel",
       "genre": "Indie",
       "year": 2008
+    },
+    {
+      "name": "Hallelujah",
+      "artist": "Jeff Buckley",
+      "album": "Grace",
+      "genre": "Pop",
+      "year": 2008
+    },
+    {
+      "name": "Beautiful Things",
+      "artist": "Gungor",
+      "album": "Ghosts upon the Earth",
+      "genre": "Indie",
+      "year": 2008
     }
   ]
 }

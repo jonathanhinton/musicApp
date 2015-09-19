@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" type="text/css" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="lib/bower_components/bootstrap-material-design/dist/css/material-fullpalette.css">
   <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+
   <link rel="stylesheet" href="styles/main.css">
+
   <meta charset="UTF-8">
   <title>listenUP</title>
 </head>
@@ -12,38 +15,64 @@
 
     <div class="row">
       <header class="main__header">
-        <nav class="navbar navbar-default" role='navigation' >
+
+<!--         <nav class="navbar navbar-default" role='navigation' >
           <ul class="nav nav-pills">
             <li role="presentation"><a href="#">View Music</a></li>
             <li role="presentation"><a href="song-form.html">Add Music</a></li>
             <li role="presentation"><a href="#">Profile</a></li>
           </ul>
         </nav>
+         -->
+        <div class="navbar navbar-warning">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-warning-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="navbar-collapse collapse navbar-warning-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="song-form.html">View Music</a></li>
+              <li><a href="song-form.html">Add Songs</a></li>
+              <li><a href="song-form.html">Profile</a></li>
+            </ul>
+          </div>
+        </div>
+
       </header>
     </div>
     <div class="row">
       <div class="col-md-1 leftBar"></div>
         <div class="col-md-3 interaction">
 
-          <div class="slider">
-            <label for="songLength">Song Length</label>
-            <input type="range" name="songLength" />
-          </div>
-          <div class="artistSelect">
-            <label for="Artist">Artist</label>
-            <br />
-            <select name="artistDrop" id="artistDrop">
-            </select>
-          </div>
+    <div class="sample1">
+      <h2>Song Length</h2>
+      <div class="slider shor slider-material-orange"></div>
+    </div>
 
-          <div class="albumSelect">
-            <label for="Album">Album</label>
-            <br />
-            <select name="albumDrop" id="albumDrop">
-            </select>
+          <!-- Single button -->
+          <div class="btn-group artistSelect">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Artist <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" id="artistDrop">
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
           </div>
 
-
+          <div class="btn-group artistSelect">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Album <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" id="albumDrop">
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </div>
+<!--
           <div class="genre">
             <div class="btn-group">
               <button type="button" class="btn btn-primary">Rock</button>
@@ -55,20 +84,34 @@
               <button type="button" class="btn btn-primary">Jazz</button>
               <button type="button" class="btn btn-primary">Folk</button>
             </div>
+          </div> -->
 
-    <!--
-            <ul class="leftBox">
-              <li><input type="checkbox" name="checkbox" id="checkbox" />Rock</li>
-              <li><input type="checkbox" name="checkbox" id="checkbox" />Pop</li>
-              <li><input type="checkbox" name="checkbox" id="checkbox" />Blues</li>
-            </ul>
-            <ul class="rightBox">
-              <li><input type="checkbox" name="checkbox" id="checkbox" />Indie</li>
-              <li><input type="checkbox" name="checkbox" id="checkbox" />Jazz</li>
-              <li><input type="checkbox" name="checkbox" id="checkbox" />Hip-hop</li>
-            </ul>
-             -->
+          <div class="genres">
+            <div class="togglebutton togglebutton-material-deep-orange">
+              <label>
+                Rock
+                <input type="checkbox" checked="">
+              </label>
+            </div>
           </div>
+
+          <div class="genres">
+            <div class="togglebutton togglebutton-material-deep-orange">
+              <label>
+                Pop
+                <input type="checkbox" checked="">
+              </label>
+            </div>
+          </div>
+          <div class="genres">
+            <div class="togglebutton togglebutton-material-deep-orange">
+              <label>
+                Blues
+                <input type="checkbox" checked="">
+              </label>
+            </div>
+          </div>
+
 
           <div class="filter">
             <input type="submit" value="filter" />
@@ -78,10 +121,7 @@
 
         <div class="col-md-7">
         <div  id="songList"></div>
-    <!--
-          <button id="get-more-music"><span class="glyphicon glyphicon-plus"></span><span </div>class="glyphicon glyphicon-music"></span></button>
-     -->
-          <button id="loadMore" class="separation--top">MO' MUSIC</button>
+
         </div>
       </div>
 

@@ -1,13 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" type="text/css" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="lib/bower_components/bootstrap-material-design/dist/css/material-fullpalette.css">
+  <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="styles/main.css">
   <meta charset="UTF-8">
   <title>listenUP</title>
 </head>
 <body>
-  <input type="text" name="title" value="" placeholder="Add New Song">
-  <input type="text" name="artist" value="" placeholder="Add Song Artist">
-  <input type="text" name="album" value="" placeholder="Add Song Album">
-  <input type="text" name="year" value="" placeholder="Add Year Released">
+  <div class="row">
+    <header class="main__header">
+
+<!--       <nav class="navbar navbar-default" role='navigation' >
+        <ul class="nav nav-pills">
+          <li role="presentation"><a href="index.html">View Music</a></li>
+          <li role="presentation"><a href="song-form.html">Add Music</a></li>
+          <li role="presentation"><a href="#">Profile</a></li>
+        </ul>
+      </nav> -->
+        <div class="navbar navbar-warning">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-warning-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="navbar-collapse collapse navbar-warning-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">View Music</a></li>
+              <li class="active"><a href="song-form.html">Add Songs</a></li>
+              <li><a href="song-form.html">Profile</a></li>
+            </ul>
+          </div>
+        </div>
+    </header>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+
+      <input type="text" class="form-control" name="title" value="" placeholder="Add New Song">
+      <input type="text" class="form-control" name="artist" value="" placeholder="Add Song Artist">
+      <input type="text" class="form-control" name="album" value="" placeholder="Add Song Album">
+      <input type="text" class="form-control" name="year" value="" placeholder="Add Year Released">
+
+    </div>
+  </div>
+  <script data-main="javascripts/entry" src="lib/bower_components/requirejs/require.js"></script>
+
 </body>
 </html>
